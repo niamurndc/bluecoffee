@@ -1,0 +1,35 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block 'content'  %}
+
+    <img src="{% static 'coffee.jpg' %}" alt="coffee" class="small-img">
+    <h1>Make Your Order</h1>
+    <form action="/create/" method="POST">
+    {% csrf_token %}
+      <div class="form-block">
+        <label for="name">Order Name</label>
+        <input type="text" name="name" id="name">
+      </div>
+      
+      <div class="form-block">
+        <label for="category">Category</label>
+        <select name="category" id="category">
+          <option value="Cold coffee">Cold Coffee</option>
+          <option value="Hot coffee">Hot Coffee</option>
+          <option value="Balck coffee">Balck Coffee</option>
+        </select>
+      </div>
+      
+      <div class="form-block">
+        <label for="ingredient">Special Extra Ingredient</label>
+        <input type="checkbox" name="ingredient" id="ingredient" value="Balck Pwoder"> Black Powder <br>
+        <input type="checkbox" name="ingredient" id="ingredient" value="White Milk"> White Milk <br>
+        <input type="checkbox" name="ingredient" id="ingredient" value="Chocolate"> Chocolate <br>
+        <input type="checkbox" name="ingredient" id="ingredient" value="Stick"> Stcik
+      </div>
+      
+
+      <input type="submit" value="Order" class="btn mt">
+    </form>
+    
+{% endblock  %}

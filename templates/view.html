@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block 'content'  %}
+
+    <img src="{% static 'coffee.jpg' %}" alt="coffee" class="small-img">
+    <h1>{{coffee.name}}</h1>
+    <div class="card">
+      <h3>Coffee Type : {{coffee.category}}</h3>
+      <h3>Specila Extra Ingredient</h3>
+      <ol>
+      {% for item in coffee.items %}
+        <li>{{item}}</li>
+      {% endfor %}
+      </ol>
+    </div>
+    <div>
+    <a href="/delete/{{coffee.id}}" class="btn">Complete Order</a>
+    <a href="/coffees/" class="btn-outline">Back</a>
+    </div>
+    
+    
+{% endblock  %}

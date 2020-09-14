@@ -1,0 +1,12 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block 'content'  %}
+
+  <img src="{% static 'coffee.jpg' %}" alt="cooffee" class="main-img">
+  <h1 class="main-title">CoffeeShop</h1>
+  {% for mesg in messages %}
+    <p>{{mesg}}</p>
+  {% endfor %}
+  <a href="/create/" class="btn-outline">Order Coffee</a>
+
+{% endblock  %}

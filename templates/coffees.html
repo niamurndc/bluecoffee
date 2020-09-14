@@ -1,0 +1,16 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block 'content'  %}
+
+    <h1>All Orders</h1>
+    {% for coffee in coffees %}
+      <div class="block">
+        <img src="{% static 'coffee.jpg' %}" alt="coffee" class="img-sm">
+        <h4>{{coffee.name}}</h4>
+        <a href="/view/{{ coffee.id }}" class="btn">View Order</a>
+      </div>
+    {% endfor %}
+
+    <a href="/logout" class="btn-outline">Logout</a>
+    
+{% endblock  %}
